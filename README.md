@@ -1,29 +1,34 @@
-# Project Title
+# 🌐 CGS Technosol Solutions - Parallax Webpage
 
-Layout Design for Company Website
+Welcome to the **Sample webpage** for **CGS Technosol Solutions**, a fully responsive and animated parallax-based website created using HTML5, CSS3, and JavaScript.
 
-## 🔧 Technologies Used
-- HTML
-- CSS
-- JavaScript (optional)
+## 🚀 Features
 
-## 📁 Project Description
-This project is a sample layout design for a company's website. It includes a responsive homepage, services section, and contact form.
+- 🖼️ Fullscreen **parallax scrolling** sections
+- 🎨 Smooth **CSS animations** on scroll
+- ✅ Clean and mobile-friendly layout
+- 📱 Responsive navigation menu with hamburger toggle
+- 📧 Working contact form UI
+- 💬 Feedback/testimonial section
+- 🌐 Ready to deploy on GitHub Pages or any static host
 
-## 🚀 How to Run It
-1. Download or clone the repository
-2. Open `index.html` in your browser
+---
 
-## 💡 Features
-- Clean and responsive layout
-- Mobile-friendly design
-- Simple structure for easy customization
+## 🧰 Technologies Used
 
-## 📷 Screenshots
-![Home Page](Snapshots/Screenshot4.png)
-![Contact Page](Snapshots/Screenshot5.png))
+- HTML5
+- CSS3 (Flexbox, Media Queries, Animations)
+- JavaScript (vanilla)
+- Unsplash & Flaticon for placeholder images/icons
 
+---
 
+## 📁 Folder Structure
 
-## 🙋‍♂️ Author
-Geetansh
+```bash
+project-folder/
+│
+├── index.html         # Main HTML file
+├── style.css          # All custom styles & animations
+├── script.js          # JS for menu toggle & scroll animations
+└── README.md          # You're reading it :)
