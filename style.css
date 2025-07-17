@@ -1,3 +1,4 @@
+/* Reset */
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +10,7 @@ body {
   line-height: 1.6;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -46,8 +48,6 @@ body {
 .nav-menu li a:hover {
   color: green;
   background-color: yellow;
-  text-decoration: double;
-
 }
 
 .hamburger {
@@ -87,6 +87,7 @@ body {
   }
 }
 
+/* Banner */
 .banner {
   background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
   height: 80vh;
@@ -99,28 +100,92 @@ body {
 
 .banner-content {
   text-align: center;
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
 }
 
-.about-container {
+/* Fade In Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Animation Base */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.about,
+.contact,
+.feedback {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  padding: 80px 20px;
+}
+
+.about {
+  background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80");
+}
+
+.contact {
+  background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80");
+}
+
+.feedback {
+  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80");
+}
+
+/* Section Overlay for Text Readability */
+.about::before,
+.contact::before,
+.feedback::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.about-container,
+.contact-wrapper,
+.feedback-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: auto;
   gap: 40px;
   align-items: center;
+  padding: 20px;
 }
 
-.about-text, .about-image {
+.about-text, .about-image,
+.contact-text, .contact-image,
+.feedback-text, .feedback-image {
   flex: 1 1 45%;
 }
 
-.about-image img {
+.about-image img,
+.contact-image img,
+.feedback-image img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Services Section */
 .services {
   background-color: #f8f8f8;
   padding: 60px 20px;
@@ -142,44 +207,16 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
   max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
 }
 
 .service-card img {
   height: 80px;
   margin-bottom: 20px;
-}
-
-.contact-wrapper,
-.feedback-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1300px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-.contact-wrapper {
-  flex-direction: row;
-}
-
-.feedback-wrapper {
-  flex-direction: row-reverse;
-}
-
-.contact-text, .contact-image,
-.feedback-text, .feedback-image {
-  flex: 1 1 45%;
-}
-
-.contact-image img,
-.feedback-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
@@ -212,10 +249,13 @@ body {
 
 .feedback-card {
   background: #f1f1f1;
+  color: black;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* Footer */
 .footer {
   background-color: #f2f2f2;
   color: #333;
@@ -275,6 +315,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .about-container,
+  .contact-wrapper,
+  .feedback-wrapper,
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -285,4 +328,3 @@ body {
     margin-bottom: 30px;
   }
 }
-
